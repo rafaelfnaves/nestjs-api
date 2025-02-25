@@ -1,0 +1,28 @@
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Amazon",
+  "symbol": "AMZ",
+  "price": 100,
+  "image": "amazon.png"
+}
+
+###
+GET http://localhost:3000/assets/AMZ
+
+###
+GET http://localhost:3000/assets
+
+###
+# @name createWallet
+POST http://localhost:3000/wallets
+
+###
+@walletId = {{ createWallet.response.body._id }}
+
+###
+GET http://localhost:3000/wallets/{{ walletId }}
+
+###
+GET http://localhost:3000/wallets
