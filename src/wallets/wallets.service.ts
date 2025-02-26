@@ -26,11 +26,11 @@ export class WalletsService {
     return this.walletSchema.findById(id);
   }
 
-  createWalletAsset(CreateWalletAssetDto: CreateWalletAssetDto) {
+  createWalletAsset(data: CreateWalletAssetDto) {
     return this.walletAssetSchema.create({
-      wallet: CreateWalletAssetDto.walletId,
-      asset: CreateWalletAssetDto.assetId,
-      shares: CreateWalletAssetDto.shares,
+      wallet: data.walletId,
+      asset: data.assetId,
+      shares: data.shares,
     });
   }
 }
