@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { Asset, AssetDocument } from 'src/assets/entities/asset.entity';
-import { Wallet, WalletDocument } from './wallet.entity';
+import { WalletDocument } from './wallet.entity';
 
 export type WalletAssetDocument = HydratedDocument<WalletAsset>;
 
@@ -16,7 +16,7 @@ export class WalletAsset {
   @Prop({ type: String, ref: Asset.name })
   asset: AssetDocument | string;
 
-  @Prop({ type: String, ref: Wallet.name })
+  @Prop({ type: String, ref: 'Wallet' })
   wallet: WalletDocument | string;
 
   createdAt!: Date;
